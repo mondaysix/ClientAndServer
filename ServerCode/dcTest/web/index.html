@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DC Test</title>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<script type="text/javascript">
+		var data = {
+		customerID:'123',
+		customerKey:'123'
+	};
+
+	var newDev = {
+		deviceID:'114',
+		token:'001124',
+		status:'1'
+	};
+	var delDevice = {
+		deviceID: '111'
+	}
+	var setDevice = {
+		deviceID:'112',
+		status:'2'
+	}
+	function cusReg () {
+		// body... 
+		$.post('/duc/customerReg/',data,function(res){
+			// console.log();
+			$('#cusRegDiv').html(JSON.stringify(res,null,4));
+		});
+	}
+	function addDev(){
+		$.post('/dcu/addDevice/',newDev,function(res){
+			$('#addDev').html(JSON.stringify(res,null,4));
+		});
+	}
+	function delDev(){
+		console.log('-----del click');
+		$.post('/dcu/delDevice/',delDevice,function(res){
+			$('#delDev').html(JSON.stringify(res,null,4));
+		});
+	}
+	function getDevinfo(){
+		$.get('/dcu/getDeviceInfo/113',function(res){
+			$('#getDevInfo').html(JSON.stringify(res,null,4));
+		});
+	}
+	function getDevsinfo(){
+		$.get('/dcu/getDevicesInfo/',function (res) {
+			// body... 
+			$('#getDevsInfo').html(JSON.stringify(res,null,4));
+		});
+	}
+	function setDevinfo(){
+		$.post('/dcu/setDeviceInfo/',setDevice,function(res){
+			$('#setDevInfo').html(JSON.stringify(res,null,4));
+		});
+	}
+	$(function  () {
+		// body... 
+		
+	})
+
+		
+	</script>
+</head>
+<body>
+	<button onclick="cusReg()">customer Reg</button>
+	<pre><code id="cusRegDiv"></code></pre>
+	<button onclick="addDev()">add Device</button>
+	<pre><code id="addDev"></code></pre>
+	<button onclick="delDev()">delete Device</button>
+	<pre><code id="delDev"></code></pre>
+	<button onclick="getDevinfo()">get Devinfo</button>
+	<pre><code id="getDevInfo"></code></pre>
+	<button onclick="getDevsinfo()">get Devsinfo</button>
+	<pre><code id="getDevsInfo"></code></pre>
+	<button onclick="setDevinfo()">set Devinfo</button>
+	<pre><code id="setDevInfo"></code></pre>
+</body>
+</html>

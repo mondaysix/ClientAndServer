@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.oy.clientdemo.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Connect Server....." />
+    <Button
+        android:id="@+id/conBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET请求连接服务器"/>
+    <TextView
+        android:id="@+id/res_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GET返回数据："/>
+    <Button
+        android:id="@+id/conBtn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="POST请求连接服务器"/>
+    <TextView
+        android:id="@+id/res_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POST返回数据："
+        />
+</LinearLayout>
