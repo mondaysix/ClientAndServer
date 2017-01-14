@@ -1,0 +1,2 @@
+# ClientAndServer
+简单搭建的服务器加Android客户端验证
